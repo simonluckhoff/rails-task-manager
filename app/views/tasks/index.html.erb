@@ -1,0 +1,17 @@
+<div class="index">
+  <h1>My tasks</h1>
+
+  <div class="tasks">
+    <% @tasks.each do |task| %>
+      <div class="task">
+        <input class="box" type="checkbox" <%= task.completed ? "checked" : "" %>>
+        <label><%= link_to task.title, task_path(task) %></label>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="home-button">
+    <%= link_to "+ Add New Task", tasks_new_path() %>
+    <%# rails routes to see the prefix for the path %>
+  </div>
+</div>
